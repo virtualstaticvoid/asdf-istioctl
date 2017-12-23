@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 get_platform() {
   [ "Linux" = "$(uname)" ] && echo "linux64" || echo "osx-amd64"
 }
@@ -19,10 +21,10 @@ cmd="$cmd $releases_path"
 
 # need jq; download portable version if not installed
 if [ -z "$(command -v jq)" ]; then
-	curl -L -s "https://github.com/stedolan/jq/releases/download/jq-1.5/jq-$(get_platform)" -o jq
-	chmod +x jq
+  curl -L -s "https://github.com/stedolan/jq/releases/download/jq-1.5/jq-$(get_platform)" -o jq
+  chmod +x jq
 fi
 
-# Fetch all tag names, and get only second column. Then remove all unnecesary characters.
+# fetch all tag names
 versions=$(eval $cmd | jq -r '.[].tag_name' | sort_versions)
 echo $versions
