@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -x
+set -e
+# set -x
 
 get_platform() {
   [ "Linux" = "$(uname)" ] && echo "linux64" || echo "osx-amd64"
