@@ -3,7 +3,7 @@ language: c
 script: asdf plugin-test istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git "istioctl version"
 
 before_script:
-  - git clone --branch v0.5.1 https://github.com/asdf-vm/asdf.git asdf
+  - git clone --branch master --depth=1 https://github.com/asdf-vm/asdf.git asdf
   - . asdf/asdf.sh
 
 os:
