@@ -1,6 +1,6 @@
 language: c
 
-script: asdf plugin-test istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git "istioctl version"
+script: asdf plugin-test istioctl $TRAVIS_BUILD_DIR "istioctl version"
 
 before_script:
   - git clone --branch master --depth=1 https://github.com/asdf-vm/asdf.git asdf
