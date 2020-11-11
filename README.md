@@ -1,6 +1,6 @@
 # asdf-istioctl
 
-[![Build Status](https://travis-ci.org/virtualstaticvoid/asdf-istioctl.svg?branch=master)](https://travis-ci.org/virtualstaticvoid/asdf-istioctl)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/virtualstaticvoid/asdf-istioctl/Main%20Workflow?style=flat-square)](https://github.com/virtualstaticvoid/asdf-istioctl/actions)
 
 [`istioctl`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
