@@ -26,12 +26,18 @@ get_platform() {
   [ "Linux" = "$(uname)" ] && echo "linux" || echo "osx"
 }
 
+get_arch() {
+  # uname -m
+  [ "Linux" = "$(uname)" ] && echo "-amd64" || echo ""
+}
+
 get_download_url() {
   local install_type=$1
   local version=$2
 
   local platform=$(get_platform)
-  echo "https://github.com/istio/istio/releases/download/${version}/istio-${version}-${platform}.tar.gz"
+  local arch=$(get_arch)
+  echo "https://github.com/istio/istio/releases/download/${version}/istio-${version}-${platform}${arch}.tar.gz"
 }
 
 install_plugin "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
