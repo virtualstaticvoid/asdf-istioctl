@@ -27,8 +27,17 @@ get_platform() {
 }
 
 get_arch() {
-  # uname -m
-  [ "Linux" = "$(uname)" ] && echo "-amd64" || echo ""
+  local arch=$(uname -m)
+  case $arch in
+    amd64 | x86_64)
+      echo "-amd64"
+      ;;
+    arm64)
+      echo "-arm64"
+      ;;
+    *)
+      echo ""
+  esac
 }
 
 get_download_url() {
@@ -37,6 +46,12 @@ get_download_url() {
 
   local platform=$(get_platform)
   local arch=$(get_arch)
+
+  # arch suffix for MacOS arm64 builds, but not for amd64 builds
+  if [ "$platform" == "osx" ] && [ "$arch" == "-amd64" ]; then
+    arch=""
+  fi
+
   echo "https://github.com/istio/istio/releases/download/${version}/istio-${version}-${platform}${arch}.tar.gz"
 }
 
