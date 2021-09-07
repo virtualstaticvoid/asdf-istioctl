@@ -46,6 +46,12 @@ get_download_url() {
 
   local platform=$(get_platform)
   local arch=$(get_arch)
+
+  # arch suffix for MacOS arm64 builds, but not for amd64 builds
+  if [ "$platform" == "osx" ] && [ "$arch" == "-amd64" ]; then
+    arch=""
+  fi
+
   echo "https://github.com/istio/istio/releases/download/${version}/istio-${version}-${platform}${arch}.tar.gz"
 }
 
