@@ -8,6 +8,7 @@
 
 ```
 asdf plugin-add istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git
+asdf install istioctl latest
 ```
 
 ## Use
