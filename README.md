@@ -1,6 +1,6 @@
 # asdf-istioctl
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/virtualstaticvoid/asdf-istioctl/Main%20Workflow?style=flat-square)](https://github.com/virtualstaticvoid/asdf-istioctl/actions)
+[![Main Workflow](https://github.com/virtualstaticvoid/asdf-istioctl/actions/workflows/workflow.yml/badge.svg)](https://github.com/virtualstaticvoid/asdf-istioctl/actions/workflows/workflow.yml)
 
 [`istioctl`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
